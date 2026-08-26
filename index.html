@@ -1,4 +1,4 @@
-YPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
@@ -314,12 +314,12 @@ SzhCd2dNWXFNK0ErZTQwMzZIbXU5UjhwNXJ2VnZNZGE3NXJ6WGV1K2U0MTM4RVRHOHU2dkhWRjcrYzNv
 RRRGZqWDZVeitPcml3dnpCU2sreFpYR3k1L2ZtWThpS05yL1dyMEhaZS9ZQWdBOGpWQWVBQURGakFRaDM5dTlwZ0pxc0VZVGRlaEsxd0l1LzJGOFBYbWRjSVg5bXkyQUVZQ2dMZzNDQTlnSU1NTUpC
 djJSRS80QytHbDRYdzRLTjJISksvL0Q3Mk10aEphaDdOT0FBQUFBRWxGVGtTdVFtQ0MiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSBtYX
 NrYWJsZSJ9XX0=" />
- 
- 
+
+
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
- 
+
 <style>
   html, body { margin: 0; padding: 0; background: #14171A; }
   #root {
@@ -341,7 +341,7 @@ NrYWJsZSJ9XX0=" />
     box-sizing: border-box;
   }
   #root, #root * { box-sizing: border-box; }
- 
+
   .ledger-page {
     max-width: 720px;
     margin: 0 auto;
@@ -361,27 +361,27 @@ NrYWJsZSJ9XX0=" />
     background: var(--margin-red);
     opacity: 0.55;
   }
- 
+
   .ledger-header { display: flex; flex-direction: column; gap: 14px; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 22px; }
   .ledger-title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 24px; letter-spacing: 0.5px; margin: 0; }
   .ledger-sub { font-family: Georgia, serif; font-size: 12px; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
- 
+
   .stamp { font-family: 'Courier New', Courier, monospace; border: 3px solid var(--ink); border-radius: 6px; padding: 8px 14px; transform: rotate(-2deg); text-align: center; background: rgba(255,255,255,0.06); align-self: flex-start; }
   .stamp .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-soft); }
   .stamp .value { font-size: 20px; font-weight: 700; }
   .stamp.positivo { border-color: var(--income); color: var(--income); }
   .stamp.negativo { border-color: var(--expense); color: var(--expense); }
- 
+
   .summary-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
   .summary-card { flex: 1 1 140px; background: var(--paper-row); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; }
   .summary-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-soft); margin-bottom: 4px; }
   .summary-card .value { font-family: 'Courier New', monospace; font-size: 17px; font-weight: 700; }
   .summary-card.ingreso .value { color: var(--income); }
   .summary-card.gasto .value { color: var(--expense); }
- 
+
   .section-title { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
   .section-title::after { content: ""; flex: 1; border-bottom: 1px solid var(--rule); }
- 
+
   .entry-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 26px; background: rgba(255,255,255,0.03); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; width: 100%; }
   .field { display: flex; flex-direction: column; gap: 4px; width: 100%; }
   .field-row { display: flex; gap: 10px; width: 100%; }
@@ -390,26 +390,26 @@ NrYWJsZSJ9XX0=" />
   .field input, .field select { font-family: Georgia, serif; font-size: 14px; padding: 9px 8px; border: 1px solid var(--rule); border-radius: 3px; background: #10140F; color: var(--ink); width: 100%; min-width: 0; }
   .field input::placeholder { color: #5C6B60; }
   .field input:focus, .field select:focus, .toggle-btn:focus-visible, .filter-select:focus-visible, .submit-btn:focus-visible, .del-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
- 
+
   .tipo-toggle { display: flex; gap: 6px; width: 100%; }
   .toggle-btn { flex: 1; padding: 9px 8px; border-radius: 3px; border: 1px solid var(--rule); background: #10140F; font-size: 13px; font-weight: 700; cursor: pointer; color: var(--ink-soft); }
   .toggle-btn.active-ingreso { background: var(--income); border-color: var(--income); color: #10140F; }
   .toggle-btn.active-gasto { background: var(--expense); border-color: var(--expense); color: #10140F; }
- 
+
   .submit-btn { width: 100%; background: var(--gold); color: #1E2420; border: none; border-radius: 3px; padding: 12px; font-family: 'Courier New', monospace; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
   .submit-btn:active { background: #b8973f; }
- 
+
   .save-status { font-size: 11px; text-align: center; min-height: 14px; }
   .save-status.saved { color: var(--income); }
   .save-status.error { color: var(--expense); }
- 
+
   .cat-bars { display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
   .cat-bar-row { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
   .cat-bar-top { display: flex; justify-content: space-between; }
   .cat-bar-amount { font-family: 'Courier New', monospace; font-weight: 700; }
   .cat-bar-track { background: var(--paper-row); border-radius: 3px; overflow: hidden; height: 9px; border: 1px solid var(--rule); }
   .cat-bar-fill { height: 100%; background: var(--expense); opacity: 0.75; }
- 
+
   .filters { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
   .filter-select { flex: 1; min-width: 140px; font-size: 12px; padding: 7px 8px; border: 1px solid var(--rule); border-radius: 3px; background: #10140F; color: var(--ink); }
   .subtotal-box { display: flex; flex-wrap: wrap; gap: 10px; background: var(--paper-row); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; margin-bottom: 14px; font-size: 12px; }
@@ -418,7 +418,7 @@ NrYWJsZSJ9XX0=" />
   .subtotal-item .value { font-family: 'Courier New', monospace; font-weight: 700; font-size: 14px; }
   .subtotal-item .value.ingreso { color: var(--income); }
   .subtotal-item .value.gasto { color: var(--expense); }
- 
+
   .entries-list { display: flex; flex-direction: column; gap: 8px; }
   .entry-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 4px; border-bottom: 1px dashed var(--rule); }
   .entry-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1; }
@@ -432,16 +432,23 @@ NrYWJsZSJ9XX0=" />
   .monto-cell.gasto { color: var(--expense); }
   .del-btn { background: none; border: 1px solid var(--rule); border-radius: 3px; color: var(--ink-soft); font-size: 11px; padding: 4px 7px; cursor: pointer; }
   .del-btn:active { border-color: var(--expense); color: var(--expense); }
- 
+
   .empty-state { text-align: center; padding: 26px 10px; color: var(--ink-soft); font-size: 13px; font-style: italic; }
   .install-hint { max-width: 720px; margin: 0 auto 14px; font-size: 11px; color: var(--ink-soft); text-align: center; }
- 
+
   .backup-row { display: flex; gap: 8px; margin-bottom: 8px; }
   .backup-btn { flex: 1; padding: 9px 8px; border-radius: 3px; border: 1px solid var(--rule); background: #10140F; color: var(--ink); font-size: 12px; font-weight: 600; cursor: pointer; font-family: Georgia, serif; text-align: center; display: flex; align-items: center; justify-content: center; position: relative; }
   .backup-btn:active { border-color: var(--gold); color: var(--gold); }
   .backup-btn input[type="file"] { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; margin: 0; padding: 0; opacity: 0; cursor: pointer; font-size: 100px; }
   .backup-hint { font-size: 11px; color: var(--ink-soft); margin: 0 0 14px 0; line-height: 1.4; }
   .backup-toggle { background: none; border: none; color: var(--gold); font-size: 11px; text-decoration: underline; cursor: pointer; padding: 0 0 20px 0; font-family: Georgia, serif; }
+  .cat-manage { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .cat-manage-group { display: flex; flex-direction: column; gap: 6px; }
+  .cat-manage-group .titulo { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-soft); }
+  .cat-chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cat-chip { display: flex; align-items: center; gap: 6px; background: var(--paper-row); border: 1px solid var(--rule); border-radius: 12px; padding: 4px 6px 4px 10px; font-size: 12px; }
+  .cat-chip button { background: none; border: none; color: var(--expense); font-size: 13px; cursor: pointer; padding: 0 4px; line-height: 1; }
+  .cat-manage-empty { font-size: 11px; color: var(--ink-soft); font-style: italic; }
   .paste-box { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
   .paste-box textarea {
     width: 100%; min-height: 90px; font-family: 'Courier New', monospace; font-size: 11px;
@@ -455,14 +462,15 @@ NrYWJsZSJ9XX0=" />
 </head>
 <body>
 <div id="root"></div>
- 
+
 <script type="text/babel">
 const { useState, useEffect, useMemo, useRef } = React;
- 
+
 const CATEGORIAS_INGRESO = ["Salario", "Freelance", "Inversiones", "Regalos", "Otros"];
 const CATEGORIAS_GASTO = ["Alimentación", "Transporte", "Vivienda", "Entretenimiento", "Salud", "Educación", "Otros"];
 const STORAGE_KEY = "libro-de-cuentas:entries";
- 
+const CATEGORIAS_KEY = "libro-de-cuentas:categorias-extra";
+
 function uid() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
@@ -481,7 +489,7 @@ function formatoFecha(iso) {
   const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
   return `${d} ${meses[parseInt(m, 10) - 1]} ${y}`;
 }
- 
+
 function cargarInicial() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -492,13 +500,27 @@ function cargarInicial() {
   } catch (e) {}
   return [];
 }
- 
+
+function cargarCategoriasExtra() {
+  try {
+    const raw = localStorage.getItem(CATEGORIAS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && Array.isArray(parsed.ingreso) && Array.isArray(parsed.gasto)) return parsed;
+    }
+  } catch (e) {}
+  return { ingreso: [], gasto: [] };
+}
+
 function LibroDeCuentas() {
   const [entries, setEntries] = useState(cargarInicial);
+  const [categoriasExtra, setCategoriasExtra] = useState(cargarCategoriasExtra);
   const [saveStatus, setSaveStatus] = useState("idle");
   const statusTimer = useRef(null);
   const primerRender = useRef(true);
- 
+  const primerRenderCat = useRef(true);
+  const [mostrarGestionCat, setMostrarGestionCat] = useState(false);
+
   const [tipo, setTipo] = useState("gasto");
   const [monto, setMonto] = useState("");
   const [categoria, setCategoria] = useState(CATEGORIAS_GASTO[0]);
@@ -506,13 +528,13 @@ function LibroDeCuentas() {
   const [descripcion, setDescripcion] = useState("");
   const [fecha, setFecha] = useState(hoyISO());
   const [errorForm, setErrorForm] = useState("");
- 
+
   const [filtroTipo, setFiltroTipo] = useState("todos");
   const [filtroCategoria, setFiltroCategoria] = useState("todas");
   const [backupMsg, setBackupMsg] = useState(null); // {tipo: 'ok'|'err', texto}
   const [mostrarTexto, setMostrarTexto] = useState(false);
   const [textoPegado, setTextoPegado] = useState("");
- 
+
   useEffect(() => {
     if (primerRender.current) { primerRender.current = false; return; }
     try {
@@ -524,21 +546,33 @@ function LibroDeCuentas() {
     if (statusTimer.current) clearTimeout(statusTimer.current);
     statusTimer.current = setTimeout(() => setSaveStatus("idle"), 1500);
   }, [entries]);
- 
-  const categoriasDisponibles = tipo === "ingreso" ? CATEGORIAS_INGRESO : CATEGORIAS_GASTO;
- 
+
+  useEffect(() => {
+    if (primerRenderCat.current) { primerRenderCat.current = false; return; }
+    try {
+      localStorage.setItem(CATEGORIAS_KEY, JSON.stringify(categoriasExtra));
+    } catch (e) {}
+  }, [categoriasExtra]);
+
+  const categoriasDisponibles = useMemo(() => {
+    const base = tipo === "ingreso" ? CATEGORIAS_INGRESO : CATEGORIAS_GASTO;
+    const extra = tipo === "ingreso" ? categoriasExtra.ingreso : categoriasExtra.gasto;
+    // insertar las extra justo antes de "Otros" (que siempre es la última)
+    return [...base.slice(0, -1), ...extra, "Otros"];
+  }, [tipo, categoriasExtra]);
+
   function cambiarTipo(nuevoTipo) {
     setTipo(nuevoTipo);
-    const lista = nuevoTipo === "ingreso" ? CATEGORIAS_INGRESO : CATEGORIAS_GASTO;
-    setCategoria(lista[0]);
+    const base = nuevoTipo === "ingreso" ? CATEGORIAS_INGRESO : CATEGORIAS_GASTO;
+    setCategoria(base[0]);
     setCategoriaCustom("");
   }
- 
+
   function registrar() {
     setErrorForm("");
     const montoNormalizado = monto.trim().replace(",", ".");
     const valor = parseFloat(montoNormalizado);
- 
+
     if (!montoNormalizado || isNaN(valor) || valor <= 0) {
       setErrorForm("Ingresa un monto válido, mayor a 0 (ej. 150.00).");
       return;
@@ -549,21 +583,46 @@ function LibroDeCuentas() {
       return;
     }
     const catFinal = categoria === "Otros" && categoriaCustom.trim() ? categoriaCustom.trim() : categoria;
+
+    // si es una categoría nueva escrita a mano, se guarda para la próxima vez
+    if (categoria === "Otros" && categoriaCustom.trim()) {
+      setCategoriasExtra((prev) => {
+        const listaTipo = prev[tipo] || [];
+        const yaExiste = listaTipo.some((c) => c.toLowerCase() === catFinal.toLowerCase());
+        if (yaExiste) return prev;
+        return { ...prev, [tipo]: [...listaTipo, catFinal] };
+      });
+    }
+
     const nueva = { id: uid(), tipo, monto: valor, categoria: catFinal, descripcion: descripcion.trim(), fecha };
     setEntries((prev) => [nueva, ...prev]);
     setMonto("");
     setCategoriaCustom("");
     setDescripcion("");
   }
- 
+
+  function eliminarCategoriaExtra(tipoCategoria, nombre) {
+    const enUso = entries.some((e) => e.tipo === tipoCategoria && e.categoria === nombre);
+    if (enUso) {
+      const continuar = window.confirm(
+        `"${nombre}" todavía tiene movimientos registrados. Si la borras, esos movimientos conservan el nombre pero la categoría ya no aparecerá en la lista para elegir. ¿Borrarla de todos modos?`
+      );
+      if (!continuar) return;
+    }
+    setCategoriasExtra((prev) => ({
+      ...prev,
+      [tipoCategoria]: prev[tipoCategoria].filter((c) => c !== nombre),
+    }));
+  }
+
   function eliminar(id) {
     setEntries((prev) => prev.filter((x) => x.id !== id));
   }
- 
+
   function generarPayload() {
     return JSON.stringify({ tipo: "libro-de-cuentas-respaldo", version: 1, entries }, null, 2);
   }
- 
+
   function exportarDatos() {
     try {
       const payload = generarPayload();
@@ -583,10 +642,10 @@ function LibroDeCuentas() {
     }
     setTimeout(() => setBackupMsg(null), 3500);
   }
- 
+
   const textareaExportRef = useRef(null);
   const [pendingCopy, setPendingCopy] = useState(false);
- 
+
   useEffect(() => {
     if (!pendingCopy || !mostrarTexto) return;
     setPendingCopy(false);
@@ -621,25 +680,25 @@ function LibroDeCuentas() {
       setTimeout(() => setBackupMsg(null), 4500);
     }
   }, [pendingCopy, mostrarTexto]);
- 
+
   function copiarComoTexto() {
     setMostrarTexto(true);
     setPendingCopy(true);
   }
- 
+
   function procesarDatosImportados(data) {
     const nuevas = Array.isArray(data) ? data : Array.isArray(data.entries) ? data.entries : null;
     if (!nuevas) throw new Error("formato inválido");
- 
+
     const valido = nuevas.every(
       (x) => x && typeof x.monto === "number" && (x.tipo === "ingreso" || x.tipo === "gasto") && x.categoria && x.fecha
     );
     if (!valido) throw new Error("formato inválido");
- 
+
     const reemplazar = window.confirm(
       `Se encontraron ${nuevas.length} movimiento(s).\n\nAceptar = FUSIONAR con tus movimientos actuales.\nCancelar = REEMPLAZAR todos tus movimientos actuales por estos.`
     );
- 
+
     if (reemplazar) {
       setEntries((prev) => {
         const idsExistentes = new Set(prev.map((x) => x.id));
@@ -652,7 +711,7 @@ function LibroDeCuentas() {
       setBackupMsg({ tipo: "ok", texto: `Movimientos reemplazados (${nuevas.length}).` });
     }
   }
- 
+
   function importarDesdeTexto() {
     if (!textoPegado.trim()) {
       setBackupMsg({ tipo: "err", texto: "Pega primero el texto del respaldo en el recuadro." });
@@ -668,7 +727,7 @@ function LibroDeCuentas() {
     }
     setTimeout(() => setBackupMsg(null), 3500);
   }
- 
+
   function importarDatos(e) {
     const file = e.target.files && e.target.files[0];
     if (!file) {
@@ -694,35 +753,35 @@ function LibroDeCuentas() {
     reader.readAsText(file);
     e.target.value = "";
   }
- 
+
   const totalIngresos = useMemo(() => entries.filter(e => e.tipo === "ingreso").reduce((s, e) => s + e.monto, 0), [entries]);
   const totalGastos = useMemo(() => entries.filter(e => e.tipo === "gasto").reduce((s, e) => s + e.monto, 0), [entries]);
   const saldo = totalIngresos - totalGastos;
- 
+
   const totalesPorCategoria = useMemo(() => {
     const map = {};
     entries.filter(e => e.tipo === "gasto").forEach(e => { map[e.categoria] = (map[e.categoria] || 0) + e.monto; });
     return Object.entries(map).sort((a, b) => b[1] - a[1]);
   }, [entries]);
   const maxCategoria = totalesPorCategoria.length > 0 ? totalesPorCategoria[0][1] : 0;
- 
+
   const categoriasFiltro = useMemo(() => Array.from(new Set(entries.map(e => e.categoria))).sort(), [entries]);
- 
+
   const entriesFiltrados = useMemo(() => {
     return entries
       .filter(e => (filtroTipo === "todos" ? true : e.tipo === filtroTipo))
       .filter(e => (filtroCategoria === "todas" ? true : e.categoria === filtroCategoria))
       .sort((a, b) => (a.fecha < b.fecha ? 1 : -1));
   }, [entries, filtroTipo, filtroCategoria]);
- 
+
   const subtotales = useMemo(() => {
     const ingresos = entriesFiltrados.filter(e => e.tipo === "ingreso").reduce((s, e) => s + e.monto, 0);
     const gastos = entriesFiltrados.filter(e => e.tipo === "gasto").reduce((s, e) => s + e.monto, 0);
     return { ingresos, gastos, neto: ingresos - gastos, cantidad: entriesFiltrados.length };
   }, [entriesFiltrados]);
- 
+
   const hayFiltroActivo = filtroTipo !== "todos" || filtroCategoria !== "todas";
- 
+
   return (
     <div className="ledger-page">
       <div className="ledger-header">
@@ -735,7 +794,7 @@ function LibroDeCuentas() {
           <div className="value">{formatoMoneda(saldo)}</div>
         </div>
       </div>
- 
+
       <div className="summary-row">
         <div className="summary-card ingreso">
           <div className="label">Ingresos</div>
@@ -750,7 +809,7 @@ function LibroDeCuentas() {
           <div className="value">{entries.length}</div>
         </div>
       </div>
- 
+
       <h2 className="section-title">Nuevo movimiento</h2>
       <div className="entry-form">
         <div className="field">
@@ -760,7 +819,7 @@ function LibroDeCuentas() {
             <button type="button" className={`toggle-btn ${tipo === "gasto" ? "active-gasto" : ""}`} onClick={() => cambiarTipo("gasto")}>Gasto</button>
           </div>
         </div>
- 
+
         <div className="field-row">
           <div className="field">
             <label htmlFor="monto">Monto</label>
@@ -771,36 +830,80 @@ function LibroDeCuentas() {
             <input id="fecha" type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
           </div>
         </div>
- 
+
         <div className="field">
           <label htmlFor="categoria">Categoría</label>
           <select id="categoria" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
             {categoriasDisponibles.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
- 
+
         {categoria === "Otros" && (
           <div className="field">
             <label htmlFor="cat-custom">Especifica categoría</label>
             <input id="cat-custom" type="text" placeholder="Ej. Mascotas" value={categoriaCustom} onChange={(e) => setCategoriaCustom(e.target.value)} />
+            {categoriaCustom.trim() && (
+              <span style={{fontSize:"10px", color:"var(--ink-soft)"}}>
+                Se guardará como categoría para la próxima vez.
+              </span>
+            )}
           </div>
         )}
- 
+
         <div className="field">
           <label htmlFor="descripcion">Descripción (opcional)</label>
           <input id="descripcion" type="text" placeholder="Ej. Compra en supermercado" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
         </div>
- 
+
         {errorForm && <div className="save-status error">{errorForm}</div>}
- 
+
         <button type="button" className="submit-btn" onClick={registrar}>Registrar movimiento</button>
- 
+
         <div className={`save-status ${saveStatus}`}>
           {saveStatus === "saved" && "✓ Guardado"}
           {saveStatus === "error" && "No se pudo guardar en este dispositivo."}
         </div>
       </div>
- 
+
+      <button type="button" className="backup-toggle" onClick={() => setMostrarGestionCat((v) => !v)}>
+        {mostrarGestionCat ? "Ocultar administrar categorías" : "Administrar categorías guardadas"}
+      </button>
+
+      {mostrarGestionCat && (
+        <div className="cat-manage">
+          <div className="cat-manage-group">
+            <span className="titulo">Categorías de gasto agregadas</span>
+            {categoriasExtra.gasto.length === 0 ? (
+              <span className="cat-manage-empty">Ninguna todavía. Se agregan solas cuando usas "Otros".</span>
+            ) : (
+              <div className="cat-chip-row">
+                {categoriasExtra.gasto.map((c) => (
+                  <span className="cat-chip" key={c}>
+                    {c}
+                    <button type="button" onClick={() => eliminarCategoriaExtra("gasto", c)} aria-label={`Borrar categoría ${c}`}>✕</button>
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="cat-manage-group">
+            <span className="titulo">Categorías de ingreso agregadas</span>
+            {categoriasExtra.ingreso.length === 0 ? (
+              <span className="cat-manage-empty">Ninguna todavía. Se agregan solas cuando usas "Otros".</span>
+            ) : (
+              <div className="cat-chip-row">
+                {categoriasExtra.ingreso.map((c) => (
+                  <span className="cat-chip" key={c}>
+                    {c}
+                    <button type="button" onClick={() => eliminarCategoriaExtra("ingreso", c)} aria-label={`Borrar categoría ${c}`}>✕</button>
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {totalesPorCategoria.length > 0 && (
         <React.Fragment>
           <h2 className="section-title">Gastos por categoría</h2>
@@ -819,7 +922,7 @@ function LibroDeCuentas() {
           </div>
         </React.Fragment>
       )}
- 
+
       <h2 className="section-title">Respaldo entre dispositivos</h2>
       {backupMsg && <div className={`backup-msg ${backupMsg.tipo === "ok" ? "ok" : "err"}`}>{backupMsg.texto}</div>}
       <div className="backup-row">
@@ -836,11 +939,11 @@ function LibroDeCuentas() {
       <p className="backup-hint">
         Exporta un archivo con tus movimientos y pásalo a otro dispositivo (por WhatsApp, correo, Drive, etc.); ahí ábrelo con "Importar respaldo" para tenerlos también ahí.
       </p>
- 
+
       <button type="button" className="backup-toggle" onClick={() => setMostrarTexto((v) => !v)}>
         {mostrarTexto ? "Ocultar opción de copiar/pegar como texto" : "¿Prefieres copiar y pegar como texto (ej. a una nota)?"}
       </button>
- 
+
       {mostrarTexto && (
         <div className="paste-box">
           <div className="paste-box-row">
@@ -852,7 +955,7 @@ function LibroDeCuentas() {
             </span>
             <textarea ref={textareaExportRef} readOnly value={generarPayload()} onFocus={(e) => e.target.select()} />
           </label>
- 
+
           <label className="field">
             <span style={{fontSize:"10px", color:"var(--ink-soft)", textTransform:"uppercase", letterSpacing:"0.8px"}}>
               Pega aquí un respaldo para restaurarlo:
@@ -866,7 +969,7 @@ function LibroDeCuentas() {
           <button type="button" className="submit-btn" onClick={importarDesdeTexto}>Importar desde el texto pegado</button>
         </div>
       )}
- 
+
       <h2 className="section-title">Movimientos registrados</h2>
       <div className="filters">
         <select className="filter-select" value={filtroTipo} onChange={(e) => setFiltroTipo(e.target.value)}>
@@ -879,7 +982,7 @@ function LibroDeCuentas() {
           {categoriasFiltro.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
       </div>
- 
+
       {hayFiltroActivo && entriesFiltrados.length > 0 && (
         <div className="subtotal-box">
           <div className="subtotal-item">
@@ -904,7 +1007,7 @@ function LibroDeCuentas() {
           </div>
         </div>
       )}
- 
+
       {entriesFiltrados.length === 0 ? (
         <div className="empty-state">
           {entries.length === 0 ? "Aún no hay movimientos. Registra el primero arriba." : "Ningún movimiento coincide con los filtros seleccionados."}
@@ -931,15 +1034,15 @@ function LibroDeCuentas() {
     </div>
   );
 }
- 
+
 function VersionTag() {
   return (
     <p style={{textAlign:"center", fontSize:"10px", color:"#56685C", marginTop:"14px"}}>
-      Libro de Cuentas · build 2026-07-26-v10
+      Libro de Cuentas · build 2026-07-26-v11
     </p>
   );
 }
- 
+
 function AppConVersion() {
   return (
     <React.Fragment>
@@ -948,7 +1051,7 @@ function AppConVersion() {
     </React.Fragment>
   );
 }
- 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppConVersion />);
 </script>
